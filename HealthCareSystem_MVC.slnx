@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="HealthCareSystem_MVC.BLL/HealthCareSystem_MVC.BLL.csproj" />
+  <Project Path="HealthCareSystem_MVC.DAL/HealthCareSystem_MVC.DAL.csproj" />
   <Project Path="HealthCareSystem_MVC/HealthCareSystem_MVC.csproj" />
 </Solution>

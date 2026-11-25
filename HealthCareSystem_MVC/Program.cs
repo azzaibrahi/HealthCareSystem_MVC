@@ -1,3 +1,5 @@
+using HealthCareSystem_MVC.Extensions;
+
 namespace HealthCareSystem_MVC
 {
     public class Program
@@ -8,6 +10,7 @@ namespace HealthCareSystem_MVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddServices(builder.Configuration);
 
             var app = builder.Build();
 
