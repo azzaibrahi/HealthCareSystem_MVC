@@ -1,6 +1,8 @@
 using HealthCareSystem_MVC.BLL.Implementations;
 using HealthCareSystem_MVC.BLL.Interfaces;
+using HealthCareSystem_MVC.BLL.Services;
 using HealthCareSystem_MVC.DAL.Data;
+using HealthCareSystem_MVC.Helper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,16 @@ public static class ApplicationServiceExtension
         #region Session 03
 
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+        #endregion
+
+        #region Session 04
+
+        services.AddScoped<IPatientService, PatientService>();
+        services.AddScoped<IDoctorService, DoctorService>();
+        services.AddScoped<IAppointmentService, AppointmentService>();
+
+        services.AddAutoMapper(config => config.AddMaps(typeof(HealthCareProfile).Assembly));
 
         #endregion
 

@@ -1,0 +1,23 @@
+@model AppointmentViewModel
+
+<td>
+    <a asp-action="Details"
+       asp-route-patientId="@Model.PatientId"
+       asp-route-doctorId="@Model.DoctorId"
+       asp-route-appointmentDate="@Model.AppointmentDate.ToString("O")"
+       class="btn btn-outline-success">Details</a>
+</td>
+<td>
+    <a asp-action="Edit"
+       asp-route-patientId="@Model.PatientId"
+       asp-route-doctorId="@Model.DoctorId"
+       asp-route-appointmentDate="@Model.AppointmentDate.ToString("O")"
+       class="btn btn-outline-warning">Edit</a>
+</td>
+<td>
+    <a asp-action="Delete"
+       asp-route-patientId="@Model.PatientId"
+       asp-route-doctorId="@Model.DoctorId"
+       asp-route-appointmentDate="@Model.AppointmentDate.ToString("O")"
+       class="btn btn-outline-danger">Delete</a>
+</td>

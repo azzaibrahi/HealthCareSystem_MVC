@@ -20,7 +20,13 @@ public class AppointmentRepository : IAppointmentRepository
         => _dbSet.Remove(appointment);
 
     public async Task<Appointment?> GetAsync(int patientId, int doctorId, DateTime appointmentDate)
-        => await _dbSet.FindAsync(patientId, doctorId, appointmentDate);
+        => await _dbSet
+            .Include(appointment => appointment.Patient)
+            .Include(appointment => appointment.Doctor)
+            .FirstOrDefaultAsync(appointment =>
+                appointment.PatientId == patientId &&
+                appointment.DoctorId == doctorId &&
+                appointment.AppointmentDate == appointmentDate);
 
     public async Task<IEnumerable<Appointment>> GetAllAsync()
         => await _dbSet

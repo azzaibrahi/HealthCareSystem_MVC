@@ -1,0 +1,12 @@
+@model DoctorViewModel
+
+<div class="form-group">
+    <label asp-for="Name"></label>
+    <input class="form-control" asp-for="Name" />
+    <span class="text-danger" asp-validation-for="Name"></span>
+</div>
+<div class="form-group mt-2">
+    <label asp-for="Specialization"></label>
+    <input class="form-control" asp-for="Specialization" />
+    <span class="text-danger" asp-validation-for="Specialization"></span>
+</div>
