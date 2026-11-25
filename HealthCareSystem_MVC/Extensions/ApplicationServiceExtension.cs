@@ -1,3 +1,5 @@
+using HealthCareSystem_MVC.BLL.Implementations;
+using HealthCareSystem_MVC.BLL.Interfaces;
 using HealthCareSystem_MVC.DAL.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +21,12 @@ public static class ApplicationServiceExtension
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(
                 configuration.GetConnectionString("DefaultConnection")));
+
+        #endregion
+
+        #region Session 03
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
 
         #endregion
 
